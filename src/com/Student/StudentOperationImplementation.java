@@ -38,14 +38,29 @@ public class StudentOperationImplementation implements StudentOperations{
 
 	@Override
 	public boolean deleteStudent(int id) {
-		// TODO Auto-generated method stub
-		return false;
+		for (Student stu : list) {
+            if (stu.getId() == id) {
+                list.remove(stu);
+                return true;
+            }
+        }
+        return false;
 	}
 
 	@Override
 	public boolean updateStudent(Student s) {
-		// TODO Auto-generated method stub
-		return false;
+		 for (int i = 0; i < list.size(); i++) {
+	            Student existing = list.get(i);
+
+	            if (existing.getId() == s.getId()) {
+	                existing.setName(s.getName());
+	                existing.setBranch(s.getBranch());
+	                existing.setFee(s.getFee());
+	                return true;
+	            }
+	        }
+	        return false;
+	        
 	}
 
 	@Override
