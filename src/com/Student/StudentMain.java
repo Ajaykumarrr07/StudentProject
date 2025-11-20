@@ -70,11 +70,47 @@ public class StudentMain {
 
                 case 3: {
                   //  UPDATE STUDENT IMPLEMENTED BY GANGAPRASAD
+                	System.out.print("Enter Id to Update: ");
+                    int id = Integer.parseInt(scan.nextLine());
+
+                    Student old = ops.findStudent(id);
+
+                    if (old == null) {
+                        System.out.println("---------- Student Not Found ----------");
+                    } else {
+                        System.out.print("Enter New Name: ");
+                        String name = scan.nextLine();
+
+                        System.out.print("Enter New Branch: ");
+                        String branch = scan.nextLine();
+
+                        System.out.print("Enter New Fees: ");
+                        int fees = Integer.parseInt(scan.nextLine());
+
+                        Student updated = new Student(id, name, branch, fees);
+                        boolean status = ops.updateStudent(updated);
+
+                        if (status)
+                            System.out.println("Student Updated Successfully");
+                        else
+                            System.out.println("Failed to Update");
+                    }
+
                 }
                 break;
 
                 case 4: {
                     //  DELETE STUDENT IMPLEMENTED BY GANGAPRASAD
+                    System.out.print("Enter Id to Delete: ");
+                    int id = Integer.parseInt(scan.nextLine());
+
+                    boolean deleted = ops.deleteStudent(id);
+
+                    if (deleted)
+                        System.out.println("Student Deleted Successfully");
+                    else
+                        System.out.println("---------- Student Not Found ----------");
+                
                 }
                 break;
 
