@@ -116,11 +116,23 @@ public class StudentMain {
 
                 case 5: {
                     //  DISPLAY ALL  STUDENT IMPLEMENTED BY MANITEJA
+                	  List<Student> all = ops.getAllStudent();
+
+                	    if (all.isEmpty()) {
+                	        System.out.println("---------- No Students Found ----------");
+                	    } else {
+                	        System.out.println("---- All Students ----");
+                	        for (Student st : all) {
+                	            System.out.println(st);
+                	        }
+                	    }
                 }
                 break;
 
                 case 6: {
                 	// EXIT FROM THE LOOP STUDENT IMPLEMENTED BY MANITEJA
+                	System.out.println("Exiting... Thank you!");
+                    System.exit(0); 
                 }
                 break;
 

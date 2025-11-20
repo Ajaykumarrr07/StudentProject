@@ -65,8 +65,8 @@ public class StudentOperationImplementation implements StudentOperations{
 
 	@Override
 	public List<Student> getAllStudent() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		  return list; 
 	}
 
 }
